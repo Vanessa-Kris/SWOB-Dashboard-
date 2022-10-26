@@ -15,7 +15,8 @@
 <body>
   <div class="container-fluid ">
 
-    <h3 class="text-light"> <img src="assets/images/Artboard 9.png" width="60px" alt=""> SMSWithoutBorders Statistics </h3>
+    <h3 class="text-light"> <img src="assets/images/Artboard 9.png" width="60px" alt=""> SMSWithoutBorders Statistics
+    </h3>
 
     <hr class="hr text-light">
 
@@ -74,7 +75,7 @@
       <div class="col-md-5" id="chart_section">
 
         <h6 class="text-light">Total</h6>
-        <h1  class="total text-light" id="total"> 0 </h1>
+        <h1 class="total text-light" id="total"> 0 </h1>
 
         <div class=" text-light" id="line_div">
           <div class="d-flex justify-content-center">
@@ -84,7 +85,7 @@
           </div>
         </div>
         <br>
-        
+
         <div class="text-light" id="bar_div">
           <div class="d-flex justify-content-center">
             <div class="spinner-border text-light" style="margin-top: 5rem; width: 4rem; height: 4rem" role="status">
@@ -99,15 +100,17 @@
       <div class="col-md-4">
 
         <div class="dropdown">
-          <button class="btn btn-outline-light dropdown-toggle" type="" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-outline-light dropdown-toggle" type="" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
             Country
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Cameroon</a></li>
-            <li><a class="dropdown-item" href="#">India</a></li>
-            <li><a class="dropdown-item" href="#">Nigeria</a></li>
+            <li><a class="dropdown-item" href="#" onclick="CamLink()">Cameroon</a></li>
+            <li><a class="dropdown-item" href="#" onclick="IndLink()">India</a></li>
+            <li><a class="dropdown-item" href="#" onclick="NigLink()">Nigeria</a></li>
           </ul>
         </div> <br>
+
 
         <h5 id="table_header"></h5>
         <div class="table-responsive rest" id="table">
@@ -116,17 +119,17 @@
             <tbody id="table_data" class="text-light"></tbody>
           </table>
         </div> <br> <br>
-
+        <!-- https://maps.google.com/maps?q=Nigeria&t=&z=1&ie=UTF8&iwloc=&output=embed -->
         <div class="mapouter">
           <div class="gmap_canvas"><iframe width="600px" height="300px" id="gmap_canvas"
-              src="https://maps.google.com/maps?q=Nigeria&t=&z=1&ie=UTF8&iwloc=&output=embed" frameborder="0"
+               src="" frameborder="0"
               scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
             <style>
               .mapouter {
                 position: relative;
                 text-align: right;
                 border-radius: 20px;
-                
+
               }
             </style><a href="https://www.embedgooglemap.net">Google</a>
             <style>
@@ -140,10 +143,10 @@
           </div>
         </div>
 
-        </div><br>
+      </div><br>
 
-      </div>
     </div>
+  </div>
   </div>
 
 
@@ -154,6 +157,7 @@
   <!-- My JS -->
   <script src="assets/js/controller.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/map.js"></script>
   <!-- Bootstrap -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">

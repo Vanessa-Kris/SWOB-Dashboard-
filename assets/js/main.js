@@ -36,6 +36,10 @@ function fetchData(
       <div class="spinner-border text-light" style="margin-top: 5rem; width: 4rem; height: 4rem" role="status">
           <span class="visually-hidden">Loading...</span>
       </div></div>`;
+      document.getElementById("pie_div").innerHTML = `<div class="d-flex justify-content-center">
+      <div class="spinner-border text-light" style="margin-top: 5rem; width: 4rem; height: 4rem" role="status">
+          <span class="visually-hidden">Loading...</span>
+      </div></div>`;
 
       document.getElementById("table_header").innerHTML = ""
       table_head.innerHTML = "";
