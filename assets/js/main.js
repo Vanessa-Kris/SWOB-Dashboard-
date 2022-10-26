@@ -215,6 +215,14 @@ function line(data) {
         titleTextStyle: {
           color: '#FFF'
         },
+        trendlines: {
+          [1]: {
+            type: 'linear',
+            showR2: true,
+            visibleInLegend: true
+          }
+        }
+
       };
 
       // Instantiate and draw our chart, passing in some options.
