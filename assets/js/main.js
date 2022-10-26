@@ -1,6 +1,6 @@
 // Load google API
 google.charts.load("current", {
-  packages: ["corechart"],
+  packages: ["corechart", 'sankey'],
 });
 
 function fetchData(
@@ -200,11 +200,13 @@ function line(data) {
           title: data[0][1],
           format: "0",
           minValue: 0,
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         hAxis: {
           title: data[0][0],
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         title: `${data[0][1]} METRICS`,
         height: 250,
@@ -251,11 +253,13 @@ function bar(data) {
           title: data[0][1],
           format: "0",
           minValue: 0,
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         hAxis: {
           title: data[0][0],
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         title: `${data[0][1]} METRICS`,
         height: 250,
@@ -266,9 +270,11 @@ function bar(data) {
         titleTextStyle: {
           color: '#FFF'
         },
+        seriesType: 'bars',
+        series: {1: {type: 'line'}}
       };
       // Instantiate and draw our chart, passing in some options.
-      var chart = new google.visualization.BarChart(
+      var chart = new google.visualization.ComboChart(
         document.getElementById("bar_div")
       );
 
@@ -293,11 +299,13 @@ function pie(data) {
           title: data[0][1],
           format: "0",
           minValue: 0,
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         hAxis: {
           title: data[0][0],
-          textStyle:{color: '#FFF'}
+          textStyle:{color: '#FFF'},
+          titleColor: '#FFF'
         },
         title: `${data[0][1]} METRICS`,
         height: 250,
@@ -308,6 +316,14 @@ function pie(data) {
         titleTextStyle: {
           color: '#FFF'
         },
+        slices: {  4: {offset: 0.2},
+        1: {offset: 0.3},
+        2: {offset: 0.3},
+        3: {offset: 0.3},
+        5: {offset: 0.3},
+},
+
+       
       };
       // Instantiate and draw our chart, passing in some options.
       var chart = new google.visualization.PieChart(
