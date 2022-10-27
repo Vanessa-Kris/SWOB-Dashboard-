@@ -2,6 +2,7 @@ let format_day = document.getElementById("format_day");
 let format_month = document.getElementById("format_month");
 let filter_type = document.getElementById("type");
 let type = document.getElementById("type");
+let country = document.getElementById("country");
 let format = document.getElementsByName("format");
 let start_date = document.getElementById("start_date");
 let end_date = document.getElementById("end_date");
@@ -152,5 +153,9 @@ window.onload = () => {
         }
 
         fetchData(URL, format_value, start_date_new, end_date_new, table_data, table_head, type.value);
+    });
+
+    country.addEventListener("change", () => {
+        document.getElementById("gmap_canvas").src = `https://maps.google.com/maps?q=${country.value}&t=&z=6&ie=UTF8&iwloc=&output=embed`;
     });
 }
