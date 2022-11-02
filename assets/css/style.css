@@ -12,7 +12,7 @@ body {
   justify-content: center;
 }
 
-.card {
+/* .card {
   margin-right: auto;
   margin-left: auto;
   width: 400px;
@@ -23,7 +23,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 10px;
   text-align: start;
-}
+} */
 
 .form-control {
   width: 119px;
@@ -77,4 +77,5 @@ table {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100px;
+  height: 200px;
 }
