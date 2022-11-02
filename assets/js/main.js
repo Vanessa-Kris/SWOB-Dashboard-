@@ -352,6 +352,7 @@ function filter_months(entry, start_date, end_date, type) {
       }
     });
 
+    let country_region_code_data = {};
     let country_data = {};
 
     country_phone_codes.forEach((element) => {
@@ -368,6 +369,12 @@ function filter_months(entry, start_date, end_date, type) {
         country_data[country_name] = (country_data[country_name] || 0) + 1;
       } else {
         country_data[country_name] = (country_data[country_name] || 0) + 1;
+      };
+
+      if (country_region_code_data[country_region_code]) {
+        country_region_code_data[country_region_code] = (country_region_code_data[country_region_code] || 0) + 1;
+      } else {
+        country_region_code_data[country_region_code] = (country_region_code_data[country_region_code] || 0) + 1;
       }
     });
 
@@ -376,24 +383,24 @@ function filter_months(entry, start_date, end_date, type) {
     Object.keys(country_data).forEach((key) => {
       document.getElementById("country").innerHTML += `<option value="${key}">${key} (${country_data[key]})</option>`
     })
-    
 
-    anychart.onDocumentReady(function () {
-      var dataSet = [ 
-        //  {'id': 'CM', 'value': 240}, 
-        //  {'id': 'NG', 'value': 275},  
-        //  {'id': 'AU', 'value': 190}, 
-        //  {'id': 'AL', 'value': 100}, 				 
-        // {'id': 'SA', 'value': 305},  
-         {country_data}
-      ];
+    let anyChartData = [];
+
+    Object.keys(country_region_code_data).forEach((key) => {
+      anyChartData.push(
+        {
+          "id": key,
+          "value": country_region_code_data[key]
+        }
+      )
+    })
     
-      //
+    anychart.onDocumentReady(function () {
       var map = anychart.map();
       map.geoData(anychart.maps.world);
     
       // set the series
-      var series = map.marker(dataSet);
+      var series = map.marker(anyChartData);
     
       map.legend(true);
     
