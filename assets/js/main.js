@@ -352,6 +352,50 @@ function filter_months(entry, start_date, end_date, type) {
       }
     });
 
+    anychart.onDocumentReady(function () {
+      var dataSet = [ //countries[key], data[key]
+         {'id': 'CM', 'value': 240}, 
+         {'id': 'NG', 'value': 275}, 
+        // {'id': countries[0], 'value': data[key]}, 
+        // {'id': 'AU.TS', 'value': 190}, 
+        // {'id': 'AU.CT', 'value': 100}, 				 
+        // {'id': 'AU.SA', 'value': 305},                
+        // {'id': 'AU.QL', 'value': 190}  
+    
+      ];
+    
+      //
+      var map = anychart.map();
+      map.geoData(anychart.maps.world);
+    
+      // set the series
+      var series = map.marker(dataSet);
+    
+      map.legend(true);
+    
+      map.title("Marker series on a map");
+    
+      anychart.theme('darkGlamour');
+    
+        //format the labels of the id-defined series
+        series.labels().format("{%name}");
+    
+        series.tooltip().format("Id: {%id} \nUsers: {%value}");
+    
+    
+      // add zoom ui controls
+      var zoomController = anychart.ui.zoom();
+      zoomController.render(map);
+    
+    
+      // disable labels
+      series.labels(false);
+    
+      // set the container
+      map.container('mapping');
+      map.draw();
+    });
+
     let country_data = {};
 
     country_phone_codes.forEach((element) => {
@@ -376,6 +420,7 @@ function filter_months(entry, start_date, end_date, type) {
     Object.keys(country_data).forEach((key) => {
       document.getElementById("country").innerHTML += `<option value="${key}">${key} (${country_data[key]})</option>`
     })
+    
 
     let data = {};
 
@@ -644,6 +689,8 @@ function pie(data) {
     }
   }
 }
+
+
 
 function run(
   data,
