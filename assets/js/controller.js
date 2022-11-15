@@ -9,11 +9,10 @@ let end_date = document.getElementById("end_date");
 let table_data = document.getElementById("table_data");
 let table_head = document.getElementById("table_head");
 
-const URL = "https://62ffa49234344b6431fe43fc.mockapi.io/statistics"
-
+const URL = "https://smswithoutborders.com:11000/statistics"
 
 window.onload = () => {
-    //document.getElementById("gmap_canvas").src = "https://maps.google.com/maps?q=Cameroon&t=&z=6&ie=UTF8&iwloc=&output=embed";
+    document.getElementById('mapping').innerHTML = `<h5 class="text-info text-center" style="margin-top: 10rem;">No data for Map Visualization</h5><p class="text-info text-center">Map Previews for only Available Users Data Type</p>`;
 
     let start_date_new = start_date.value
     let end_date_new = end_date.value
@@ -154,8 +153,4 @@ window.onload = () => {
 
         fetchData(URL, format_value, start_date_new, end_date_new, table_data, table_head, type.value);
     });
-
-    //country.addEventListener("change", () => {
-       // document.getElementById("gmap_canvas").src = `https://maps.google.com/maps?q=${country.value}&t=&z=6&ie=UTF8&iwloc=&output=embed`;
-    //});
 }
