@@ -12,11 +12,11 @@ body {
 }
 
 .rest {
-  padding: 10px;
-  border: 20px;
-  border-width: 200px;
+   padding: 10px;
+ /* border: 20px;
+  border-width: 200px; */
   height: 200px !important;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 table {

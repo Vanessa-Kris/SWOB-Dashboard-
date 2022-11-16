@@ -391,7 +391,7 @@ function filter_months(entry, start_date, end_date, type) {
     countrydatamapper.forEach((key) => {
       totoalUserCount += country_data[key]
     });
-
+    
     countrydatamapper.forEach((key, index) => {
       document.getElementById("countrytable_header").innerHTML = `<h6 class="text-light">Country Summary Table</h6>`
       document.getElementById("countrytable_head").innerHTML = `<tr><th scope="col">COUNTRY</th><th scope="col">NUMBER OF USERS</th><th scope="col">PERCENTAGE</th></tr>`;
@@ -529,11 +529,18 @@ function filter_days(entry, start_date, end_date, type) {
     document.getElementById("countrytable_data").innerHTML = ""
 
     let countrydatamapper = Object.keys(country_data);
+    let totoalUserCount = 0
+
+    countrydatamapper.forEach((key) => {
+      totoalUserCount += country_data[key]
+    });
+
     countrydatamapper.forEach((key, index) => {
       document.getElementById("countrytable_header").innerHTML = `<h6 class="text-light">Country Summary Table</h6>`
       document.getElementById("countrytable_head").innerHTML = `<tr><th scope="col">COUNTRY</th><th scope="col">NUMBER OF USERS</th><th scope="col">PERCENTAGE</th></tr>`;
       document.getElementById("countrytable_data").innerHTML += `<tr><td class="pointclick" onclick="map.zoomToFeature('${Object.keys(country_region_code_data)[index]}')">${key}</td><td>${country_data[key]}</td><td> ${((country_data[key]/totoalUserCount) * 100).toFixed(1) + "%" } </td></tr>`;
     });
+
     document.getElementById("countrytotaldiv").style.display = "block"
     document.getElementById("countrytotal").innerHTML = `<h3 class="total text-light" id="countrytotal"> ${countrydatamapper.length}</h3>`
     // Map //
@@ -757,14 +764,13 @@ function run(
 
   // Table
   document.getElementById("table_header").innerHTML = `<h6 class="text-light">Summary Table</h6>`
-  table_head.innerHTML = `<tr><th scope="col">${headers[0]}</th><th scope="col">${headers[1]}</th><th scope="col">${headers[1]}</th></tr>`;
+  table_head.innerHTML = `<tr><th scope="col">${headers[0]}</th><th scope="col">${headers[1]}</th></tr>`;
   table_data.innerHTML = "";
 
   let total = 0;
 
   filter_data.forEach((item, index, array) => {
-    table_data.innerHTML += `<tr><td>${item[0]}</td><td>${item[1]}</td><td>${item[1]}</td></tr>`;
-
+    table_data.innerHTML += `<tr><td>${item[0]}</td><td>${item[1]}</td></tr>`;
     if (type == "available") {
       if (index == array.length - 1) {
         total = item[1];
