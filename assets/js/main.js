@@ -458,7 +458,7 @@ function filter_months(entry, start_date, end_date, type) {
       return [key, data[key]];
     });
 
-    document.getElementById('mapping').innerHTML = `<h5 class="text-info text-center" style="margin-top: 10rem;">No data for Map Visualization</h5><p class="text-info text-center">Map Previews for only Available Users Data Type</p>`;
+    document.getElementById('mapping').innerHTML = `<h5 class="text-info text-center" style="margin-top: 1rem;">No data for Map Visualization</h5><p class="text-info text-center">Map Previews for only Available Users Data Type</p>`;
     document.getElementById("countrytable_header").innerHTML = "";
     document.getElementById("countrytable_head").innerHTML = "";
     document.getElementById("countrytable_data").innerHTML = "";
@@ -599,7 +599,7 @@ function filter_days(entry, start_date, end_date, type) {
       return [key, data[key]];
     });
 
-    document.getElementById('mapping').innerHTML = `<h5 class="text-info text-center" style="margin-top: 10rem;">No data for Map Visualization</h5><p class="text-info text-center">Map Previews for only Available Users Data Type</p>`;
+    document.getElementById('mapping').innerHTML = `<h5 class="text-info text-center" style="margin-top: 1rem;">No data for Map Visualization</h5><p class="text-info text-center">Map Previews for only Available Users Data Type</p>`;
     document.getElementById("countrytable_header").innerHTML = "";
     document.getElementById("countrytable_head").innerHTML = "";
     document.getElementById("countrytable_data").innerHTML = "";
@@ -653,7 +653,7 @@ function line(data) {
           },
           titleColor: '#FFF'
         },
-        title: `${data[0][1]} METRICS`,
+       // title: `${data[0][1]} METRICS`,
         height: 250,
         backgroundColor: '#0e213b',
         legendTextStyle: {
@@ -819,6 +819,8 @@ function createMap(data) {
     // map.title("AVAILABLE USERS AROUND THE WORLD");
 
     anychart.theme('darkBlue');
+
+    map.height('110%');
 
     // map.fullScreen(true)
 
