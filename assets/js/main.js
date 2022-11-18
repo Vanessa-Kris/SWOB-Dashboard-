@@ -294,11 +294,6 @@ function fetchData(
           <span class="visually-hidden">Loading...</span>
       </div></div>`;
 
-      // document.getElementById("pie_div").innerHTML = `<div class="d-flex justify-content-center">
-      // <div class="spinner-border text-light" style="margin-top: 5rem; width: 4rem; height: 4rem" role="status">
-      //     <span class="visually-hidden">Loading...</span>
-      // </div></div>`;
-
       document.getElementById("table_header").innerHTML = `<h6 class="text-light">Loading Summary ...</h6>`
       table_head.innerHTML = "";
       table_data.innerHTML = "";
@@ -387,10 +382,11 @@ function filter_months(entry, start_date, end_date, type) {
 
     let countrydatamapper = Object.keys(country_data);
     let totoalUserCount = 0
-
+    
     countrydatamapper.forEach((key) => {
       totoalUserCount += country_data[key]
     });
+    countrydatamapper.sort();
     
     countrydatamapper.forEach((key, index) => {
       document.getElementById("countrytable_header").innerHTML = `<h6 class="text-light">Country Summary Table</h6>`
@@ -429,6 +425,7 @@ function filter_months(entry, start_date, end_date, type) {
       previous_months_count += (data[array[index - 1]] || 0)
       return [key, data[key] + previous_months_count];
     });
+    
 
     return result;
   } else {
@@ -534,7 +531,8 @@ function filter_days(entry, start_date, end_date, type) {
     countrydatamapper.forEach((key) => {
       totoalUserCount += country_data[key]
     });
-
+    countrydatamapper.sort();
+    
     countrydatamapper.forEach((key, index) => {
       document.getElementById("countrytable_header").innerHTML = `<h6 class="text-light">Country Summary Table</h6>`
       document.getElementById("countrytable_head").innerHTML = `<tr><th scope="col">COUNTRY</th><th scope="col">NUMBER OF USERS</th><th scope="col">PERCENTAGE</th></tr>`;
@@ -677,72 +675,6 @@ function line(data) {
     }
   }
 }
-
-// function pie(data) {
-//   if (data.length < 2) {
-//     document.getElementById("pie_div").innerHTML = `<h5 class="text-danger text-center" style="margin-top: 5rem;">Sorry No Data To Display!</h5>`
-//   } else {
-//     // Set a callback to run when the Google Visualization API is loaded.
-//     google.charts.setOnLoadCallback(drawChart);
-
-//     function drawChart() {
-//       var result = google.visualization.arrayToDataTable(data);
-
-//       // Set chart options
-//       var options = {
-//         vAxis: {
-//           title: data[0][1],
-//           format: "0",
-//           minValue: 0,
-//           textStyle: {
-//             color: '#FFF'
-//           },
-//           titleColor: '#FFF'
-//         },
-//         hAxis: {
-//           title: data[0][0],
-//           textStyle: {
-//             color: '#FFF'
-//           },
-//           titleColor: '#FFF'
-//         },
-//         title: `${data[0][1]} METRICS`,
-//         height: 250,
-//         backgroundColor: '#0e213b',
-//         legendTextStyle: {
-//           color: '#FFF'
-//         },
-//         titleTextStyle: {
-//           color: '#FFF'
-//         },
-//         slices: {
-//           4: {
-//             offset: 0.2
-//           },
-//           1: {
-//             offset: 0.3
-//           },
-//           2: {
-//             offset: 0.3
-//           },
-//           3: {
-//             offset: 0.3
-//           },
-//           5: {
-//             offset: 0.3
-//           },
-//         },
-//       };
-
-//       // Instantiate and draw our chart, passing in some options.
-//       var chart = new google.visualization.PieChart(
-//         document.getElementById("pie_div")
-//       );
-
-//       chart.draw(result, options);
-//     }
-//   }
-// }
 
 function run(
   data,
