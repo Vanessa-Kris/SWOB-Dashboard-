@@ -11,19 +11,17 @@ body {
   display: flex;
 }
 
-.rest {
-   padding: 10px;
- /* border: 20px;
-  border-width: 200px; */
+ .rest {
   height: 200px !important;
   overflow-y: auto;
-}
+} 
 
 table {
   border-radius: 70px;
 }
+
 .mapouter {
-  height: 250px;
+  height: 350px;
 }
 
 .pointclick {
@@ -36,7 +34,7 @@ table {
 }
 
 .totalbox {
-  font-family:  Ubuntu;
+  font-family: Ubuntu;
   background-color: #1160b4;
   border-radius: 5px;
   text-align: center;
