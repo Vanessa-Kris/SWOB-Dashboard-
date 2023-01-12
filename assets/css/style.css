@@ -1,5 +1,5 @@
 body {
-  background-color: #0e213b;
+  background-color: #070A1E;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -7,23 +7,24 @@ body {
 
 }
 
-.form-check {
+/* .form-check {
   display: flex;
-}
+} */
 
- .rest {
+.rest {
   height: 200px !important;
   overflow-y: auto;
-} 
-
-table {
-  border-radius: 70px;
 }
+
+/* table {
+  border-radius: 70px;
+} */
 
 .mapouter {
-  height: 300px;
+  height: 90%;
 }
 
+/* Map pointer */
 .pointclick {
   cursor: pointer;
 }
@@ -33,9 +34,142 @@ table {
   background-color: #1160b4;
 }
 
-.totalbox {
+/* .totalbox {
   font-family: Ubuntu;
   background-color: #1160b4;
   border-radius: 5px;
   text-align: center;
+}  */
+
+/* New Page CSS */
+
+.main {
+  margin-left: 30px;
+  margin-bottom: 70px;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  /* 100% Full-height */
+  width: 0;
+  /* 0 width - change this with JavaScript */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #0F1639;
+  /* Black*/
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+  padding-top: 60px;
+  /* Place content 60px from the top */
+  transition: 0.5s;
+  /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  /* font-size: 25px; */
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  /* font-size: 36px; */
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.textsmall {
+  font-size: 12px;
+}
+
+.card1 {
+  background-color: #2678f318;
+  padding: 10px;
+  /* padding-top: 15px;
+  padding-left: 15px; */
+  /* width: 250px; */
+  /* align-items: center; */
+ 
+}
+
+.icon1 {
+  background-color: #41f3263f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.icon2 {
+  background-color: #b226f33f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.bigbox {
+  background-color: #2678f318;
+  height: 250px !important;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.smallbox {
+  background-color: #2678f318;
+  height: 250px !important;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+footer {
+  background-color: #000000;
+  font-family: Ubuntu;
+}
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 900px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .main {
+    margin-left: 0px;
+  }
 }

@@ -396,7 +396,7 @@ function filter_months(entry, start_date, end_date, type) {
     document.getElementById("mapping").style.display = "block"
     document.getElementById("countrytotaldiv").style.display = "block"
     document.getElementById("countrytableid").style.display = "block";
-    document.getElementById("countrytotal").innerHTML = `<h3 class="total text-light" id="countrytotal"> ${countrydatamapper.length}</h3>`
+    document.getElementById("countrytotal").innerHTML = `<h3 class="total text-light" id="countrytotal"> ${countrydatamapper.length} <i class="fa-solid fa-sort-up"></i></h3>`
 
 
     // Map //
@@ -539,7 +539,7 @@ function filter_days(entry, start_date, end_date, type) {
     document.getElementById("mapping").style.display = "block"
     document.getElementById("countrytotaldiv").style.display = "block"
     document.getElementById("countrytableid").style.display = "block";
-    document.getElementById("countrytotal").innerHTML = `<h3 class="total text-light" id="countrytotal"> ${countrydatamapper.length}</h3>`
+    document.getElementById("countrytotal").innerHTML = `<h3 class="total text-light" id="countrytotal"> ${countrydatamapper.length} <i class="fa-solid fa-sort-up"></i></h3>`
 
 
     // Map //
@@ -715,7 +715,7 @@ function run(
 
   document.getElementById("totalheader").innerHTML = `<p class="text-light totalheader" id=""> TOTAL ${headers[1]}</p>`;
 
-  document.getElementById("total").innerHTML = total
+  document.getElementById("total").innerHTML = `<h3 class="total text-light" id="total"> ${total} <i class="fa-solid fa-sort-up"></i></h3>`
 
   filter_data.unshift(headers);
 

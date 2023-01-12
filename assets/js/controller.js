@@ -9,7 +9,7 @@ let end_date = document.getElementById("end_date");
 let table_data = document.getElementById("table_data");
 let table_head = document.getElementById("table_head");
 
-const URL = "https://smswithoutborders.com:11000/statistics"
+const URL = "https://62ffa49234344b6431fe43fc.mockapi.io/statistics"
 
 window.onload = () => {
     document.getElementById('mapping').style.display = "none";
@@ -153,4 +153,17 @@ window.onload = () => {
 
         fetchData(URL, format_value, start_date_new, end_date_new, table_data, table_head, type.value);
     });
+}
+
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
 }
